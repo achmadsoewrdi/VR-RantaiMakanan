@@ -59,7 +59,7 @@ public class QuizManager : MonoBehaviour
 
         // --- ANIMASI MUNCUL SMOOTH ---
         quizPanel.SetActive(true); // Aktifkan dulu objeknya
-        StartCoroutine(FadePanel(0, 1, 0.0001f, 0.005f)); // Pudar 0 ke 1, Skala 0.8 ke 1
+        StartCoroutine(FadePanel(0, 1, 0.0001f, 0.003f)); // Pudar 0 ke 1, Skala 0.8 ke 1
         Debug.Log("[QuizManager] Quiz muncul halus.");
     }
 
@@ -84,12 +84,12 @@ public class QuizManager : MonoBehaviour
 
         if (isCorrect)
         {
-            feedbackText.text = "✓ Benar!";
+            feedbackText.text = "Benar!";
             feedbackText.color = correctColor;
         }
         else
         {
-            feedbackText.text = "✗ Salah!";
+            feedbackText.text = "Salah!";
             feedbackText.color = wrongColor;
 
             // Tampilkan jawaban yang benar
@@ -103,7 +103,7 @@ public class QuizManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         
         // --- ANIMASI HILANG SMOOTH ---
-        yield return StartCoroutine(FadePanel(1, 0, 0.005f, 0f)); // Pudar 1 ke 0
+        yield return StartCoroutine(FadePanel(1, 0, 0.003f, 0f)); // Pudar 1 ke 0
         quizPanel.SetActive(false);
 
         // --- PERBAIKAN LOGIKA ANTISIPASI ERROR ---
