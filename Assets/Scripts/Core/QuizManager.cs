@@ -106,15 +106,6 @@ public class QuizManager : MonoBehaviour
         ShowQuiz();
     }
 
-    /// <summary>
-    /// Dipanggil oleh Scene06Controller (atau scene controller lain)
-    /// untuk memunculkan quiz secara manual, tanpa menunggu event narasi.
-    /// </summary>
-    public void TriggerQuiz()
-    {
-        StartCoroutine(ShowQuizAfterDelay(quizData != null ? quizData.displayDelay : 0f));
-    }
-
     private void ShowQuiz()
     {
         if (quizData == null) return;
