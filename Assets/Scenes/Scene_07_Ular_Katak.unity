@@ -15938,7 +15938,7 @@ MonoBehaviour:
   canvasPenjelasanGroup: {fileID: 98087666}
   ecoAudioSource: {fileID: 1102496786}
   klipNarasi: {fileID: 8300000, guid: a0536138378dcee46bff79fce1060ad9, type: 3}
-  klipAjakanKuis: {fileID: 8300000, guid: 6aec15339ea75ec4fbeecdc97f621246, type: 3}
+  klipAjakanKuis: {fileID: 8300000, guid: 6a172e844f303654cab143a93db56ab4, type: 3}
   durasiTransisi: 1
 --- !u!1001 &348200093
 PrefabInstance:

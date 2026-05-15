@@ -15831,7 +15831,7 @@ MonoBehaviour:
   canvasPenjelasanGroup: {fileID: 98087666}
   ecoAudioSource: {fileID: 1102496786}
   klipNarasi: {fileID: 8300000, guid: d89d63b6c7ba5dc408e1761c7fb57a8d, type: 3}
-  klipAjakanKuis: {fileID: 8300000, guid: 6aec15339ea75ec4fbeecdc97f621246, type: 3}
+  klipAjakanKuis: {fileID: 8300000, guid: a8067fec22e0be348ba3e0d069b02a44, type: 3}
   durasiTransisi: 1
 --- !u!1001 &348200093
 PrefabInstance:
@@ -17994,7 +17994,7 @@ MonoBehaviour:
   radiusDeteksi: 1
   ecoAudioSource: {fileID: 1102496786}
   klipNarasi: {fileID: 8300000, guid: c96960936d48b1645a64761ec1d0a5ad, type: 3}
-  klipAjakanKuis: {fileID: 8300000, guid: 6aec15339ea75ec4fbeecdc97f621246, type: 3}
+  klipAjakanKuis: {fileID: 8300000, guid: 6a172e844f303654cab143a93db56ab4, type: 3}
   grupHewanTransform: {fileID: 393606565}
   canvasPenjelasanGroup: {fileID: 98087666}
   durasiTransisiSmooth: 1

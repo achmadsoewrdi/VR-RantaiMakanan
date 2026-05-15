@@ -22,6 +22,7 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private Color correctColor = new Color(0.2f, 0.8f, 0.2f);
     [SerializeField] private Color wrongColor = new Color(0.8f, 0.2f, 0.2f);
 
+    public System.Action OnQuizSelesai; // Alarm penanda kuis beres
     private bool _answered = false;
 
     private void Start()
@@ -35,6 +36,11 @@ public class QuizManager : MonoBehaviour
         if (buttonB != null) buttonB.OnSelected += () => HandleAnswer(false);
     }
 
+    public void SetQuizData(QuizData newData) 
+    { 
+        quizData = newData; 
+    }
+
     // --- DIUBAH MENJADI PUBLIC AGAR BISA DIPANGGIL SUTRADARA ---
     public void ShowQuiz()
     {
@@ -46,6 +52,10 @@ public class QuizManager : MonoBehaviour
 
         feedbackText.gameObject.SetActive(false);
         _answered = false;
+
+        // PENTING: Nyalakan kembali tombol untuk Kuis Beruntun!
+        if (buttonA != null) buttonA.SetInteractable(true);
+        if (buttonB != null) buttonB.SetInteractable(true);
 
         // --- ANIMASI MUNCUL SMOOTH ---
         quizPanel.SetActive(true); // Aktifkan dulu objeknya
@@ -93,18 +103,32 @@ public class QuizManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         
         // --- ANIMASI HILANG SMOOTH ---
-        yield return StartCoroutine(FadePanel(1, 0, 0.005f, 0f)); // Pudar 1 ke 0, Skala 1 ke 0.8
+        yield return StartCoroutine(FadePanel(1, 0, 0.005f, 0f)); // Pudar 1 ke 0
         quizPanel.SetActive(false);
 
-        yield return new WaitForSeconds(1.5f); // Jeda hening sebelum pindah scene
+        // --- PERBAIKAN LOGIKA ANTISIPASI ERROR ---
+        if (OnQuizSelesai != null)
+        {
+            // Jika ada antrean (Scene Beruntun), langsung panggil
+            OnQuizSelesai.Invoke();
+        }
+        else 
+        {
+            // Jika tidak ada antrean (Scene biasa), tunggu jeda lalu pindah scene
+            yield return new WaitForSeconds(1.5f); 
 
-        if (SceneController.Instance != null)
-            SceneController.Instance.LoadNextScene();
+            if (SceneController.Instance != null)
+            {
+                SceneController.Instance.LoadNextScene();
+            }
+        }
     }
 
     IEnumerator FadePanel(float startAlpha, float endAlpha, float startScale, float endScale)
     {
         CanvasGroup cg = quizPanel.GetComponent<CanvasGroup>();
+        if (cg == null) yield break;
+
         float duration = 0.5f; // Kecepatan animasi (0.5 detik)
         float time = 0;
 

@@ -7351,7 +7351,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: bc026cd5228362d4b98c83b0450286a9, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!4 &139918000 stripped
 Transform:
@@ -18010,7 +18010,7 @@ MonoBehaviour:
   radiusDeteksi: 1
   ecoAudioSource: {fileID: 1102496786}
   klipNarasi: {fileID: 8300000, guid: c96960936d48b1645a64761ec1d0a5ad, type: 3}
-  klipAjakanKuis: {fileID: 8300000, guid: 6aec15339ea75ec4fbeecdc97f621246, type: 3}
+  klipAjakanKuis: {fileID: 8300000, guid: 6a172e844f303654cab143a93db56ab4, type: 3}
   grupHewanTransform: {fileID: 393606565}
   canvasPenjelasanGroup: {fileID: 98087666}
   durasiTransisiSmooth: 1
