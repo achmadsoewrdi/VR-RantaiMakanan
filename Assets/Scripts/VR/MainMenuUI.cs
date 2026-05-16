@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using System.Collections;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class MainMenuUI : MonoBehaviour
     public CharacterController characterController;
     public TrackedPoseDriver trackedPoseDriver;
 
+    [Header("Scene Transition")]
+    public Transform xrOrigin; // Drag XR Origin (VR)
+
     void Start()
     {
         if (vrMovementAnimator != null)
@@ -20,11 +24,8 @@ public class MainMenuUI : MonoBehaviour
         if (characterController != null)
             characterController.enabled = false;
 
-        // Hanya freeze posisi, rotasi tetap jalan
         if (trackedPoseDriver != null)
             trackedPoseDriver.trackingType = TrackedPoseDriver.TrackingType.RotationOnly;
-        else
-            Debug.LogWarning("[MainMenuUI] TrackedPoseDriver belum di-assign!");
 
         if (characterDuplikat != null)
             characterDuplikat.SetActive(false);
@@ -40,15 +41,30 @@ public class MainMenuUI : MonoBehaviour
 
     private void OnPanelSelesai()
     {
+        // Simpan posisi terakhir XR Origin ke PlayerPrefs
+        if (xrOrigin != null)
+        {
+            PlayerPrefs.SetFloat("SpawnX", xrOrigin.position.x);
+            PlayerPrefs.SetFloat("SpawnY", xrOrigin.position.y);
+            PlayerPrefs.SetFloat("SpawnZ", xrOrigin.position.z);
+            PlayerPrefs.Save();
+        }
+
+        // Aktifkan kembali movement
         if (vrMovementAnimator != null)
             vrMovementAnimator.enabled = true;
 
         if (characterController != null)
             characterController.enabled = true;
 
-        // Kembalikan ke Rotation And Position setelah panel selesai
         if (trackedPoseDriver != null)
             trackedPoseDriver.trackingType = TrackedPoseDriver.TrackingType.RotationAndPosition;
+
+        // Load scene berikutnya via SceneController yang sudah ada
+        if (SceneController.Instance != null)
+            SceneController.Instance.LoadNextScene();
+        else
+            Debug.LogWarning("[MainMenuUI] SceneController.Instance tidak ditemukan!");
 
         this.enabled = false;
     }
