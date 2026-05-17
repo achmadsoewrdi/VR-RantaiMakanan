@@ -18,4 +18,4 @@ MonoBehaviour:
   isAnswerA: 1
   displayDelay: 0.5
   gazeSelectDuration: 2
-  feedbackDuration: 1.5
+  feedbackDuration: 5
