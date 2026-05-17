@@ -11634,7 +11634,7 @@ MonoBehaviour:
   subtitleBeat2: {fileID: 742655644}
   narasiBeat2: Semua makhluk hidup membutuhkan makanan untuk bertahan hidup. Tumbuhan
     membuat makanan sendiri dengan bantuan sinar matahari.
-  narrasiBeat2Clip: {fileID: 8300000, guid: 554259ee49e1f2d47935292b12d0bd8d, type: 3}
+  narrasiBeat2Clip: {fileID: 8300000, guid: ab1bf2bc51300a045a8ab40a39500986, type: 3}
   animasi3DKeluarDuration: 1
   animasi3DKeluarOffsetY: 5
   fadeInDuration: 1
@@ -56990,7 +56990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   narrationSource: {fileID: 1341228758}
   ambienceSource: {fileID: 1341228760}
-  narrationClip: {fileID: 8300000, guid: a2db97fd0a8079147af3239a2e04cc14, type: 3}
+  narrationClip: {fileID: 8300000, guid: 9e3ffd9f38d573a4b9815f7c8deaace0, type: 3}
   ambienceClip: {fileID: 8300000, guid: 63f69e2340d27f64ba351eeeed8de29b, type: 3}
   narrationVolume: 1
   ambienceVolume: 0.3003
