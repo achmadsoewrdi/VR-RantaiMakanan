@@ -4020,6 +4020,7 @@ MonoBehaviour:
   vrMovementAnimator: {fileID: 1352683404}
   characterController: {fileID: 788883245}
   trackedPoseDriver: {fileID: 41045062}
+  xrOrigin: {fileID: 0}
 --- !u!4 &77649494
 Transform:
   m_ObjectHideFlags: 0
@@ -70535,7 +70536,6 @@ Transform:
   m_Children:
   - {fileID: 1341228757}
   - {fileID: 679761248}
-  - {fileID: 1704863581}
   - {fileID: 77649494}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -72427,7 +72427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1651551312}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1704863582
 MonoBehaviour:
@@ -72462,6 +72462,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneController
   transitionDelay: 0.5
+  fadeDuration: 1
+  fadeColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1706355390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3203271907141633519, guid: 6bf16665a4c887e438221c8e76eedb67, type: 3}
@@ -91607,6 +91609,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1539439794}
   - {fileID: 1651551312}
+  - {fileID: 1704863581}
   - {fileID: 268949280}
   - {fileID: 526734711}
   - {fileID: 1212848749}
