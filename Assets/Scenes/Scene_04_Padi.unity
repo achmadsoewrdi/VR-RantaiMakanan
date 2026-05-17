@@ -18161,7 +18161,7 @@ MonoBehaviour:
   kameraPlayer: {fileID: 41045059}
   radiusDeteksi: 1
   ecoAudioSource: {fileID: 1102496786}
-  klipNarasi: {fileID: 8300000, guid: c96960936d48b1645a64761ec1d0a5ad, type: 3}
+  klipNarasi: {fileID: 8300000, guid: b13996a0a2e9b47468b8f340e080dd19, type: 3}
   klipAjakanKuis: {fileID: 8300000, guid: 6a172e844f303654cab143a93db56ab4, type: 3}
   grupHewanTransform: {fileID: 393606565}
   canvasPenjelasanGroup: {fileID: 98087666}
