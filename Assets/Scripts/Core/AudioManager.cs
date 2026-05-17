@@ -90,6 +90,22 @@ public class AudioManager : MonoBehaviour
         ambienceSource.Play();
     }
 
+    // ← METHOD BARU: tidak mengubah apapun di atas
+    /// <summary>Play narasi dengan clip spesifik (untuk multi-beat).</summary>
+    public void PlayNarrationClip(AudioClip clip)
+    {
+        if (clip == null) return;
+
+        narrationSource.Stop();
+        StopAllCoroutines();
+
+        narrationSource.volume = narrationVolume;
+        narrationSource.clip = clip;
+        narrationSource.Play();
+
+        StartCoroutine(WaitForNarrationEnd(clip.length));
+    }
+
     /// <summary>Hentikan semua audio.</summary>
     public void StopAll()
     {
